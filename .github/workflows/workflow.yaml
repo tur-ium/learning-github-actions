@@ -6,11 +6,11 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-      steps:
-        - name: Say Hello
-          run: echoo "Hello GitHub octopus"
-        - name: create a new python file
-          run: |
-            python3 -V
-            touch new_python_file.py
-            ls -l
+    steps:
+      - name: Say Hello
+        run: echoo "Hello GitHub octopus"
+      - name: create a new python file
+        run: |
+          python3 -V
+          touch new_python_file.py
+          ls -l
