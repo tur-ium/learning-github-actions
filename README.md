@@ -11,7 +11,7 @@ Automate building, testing and deployment of code
 This field of work is known as DevOps (short for ~~Developer...wOopsiesArbitraration~~ software Development IT Operations). Professionals in this field are known for their chivalry in the battle against entropy, cold brews and tears.
 
 # ML Project Lifecycle
-![Diagram of a project life cycle courtesy of DataScientest](img.png)
+![Diagram of a project life cycle courtesy of DataScientest](github_actions_workflow.png)
 1. Data preparation: Turning raw data into a form that can be used for machine learning, where the key and somewhat odd assumption common in the software community today is that we __need__ or even __want__ machines to learn from every piece of data
 2. Model Training: Designing and setting an appropriate machine learning model for answering a question. Typically the responsibility of a *data scientist*
 3. Model Deployment: Once the model is good enough, the model needs to get to the people who need it. This is where we put on a *data engineer* or *machine learning engineer* hard hat
@@ -38,3 +38,12 @@ This repo is on GitHub, so we're going to have a look at GitHub Actions [1](http
 * Steps: Individual tasks that run commands on a job. Can be an action or a shell script
 * Actions: A command that is executed on a runner
 * Runners: A GitHub actions server. Listens for available jobs, runs them in __parallel__ and reports on progress. Each runner can run on GitHub or on a localized server
+
+### Enabling debugging in GitHub Actions:
+To enabling debugging set the secrets `ACTIONS_RUNNER_DEBUG` and `ACTIONS_STEP_DEBUG` to `true` under `Repository settings>Security>Secrets and variables>Actions` (see screenshot below)
+![Where to find GitHub secrets](github_secrets.png)
+
+### What happens if you get an error?
+e.g. in the case of mistyping bash command `echo` as `echoo` you see the following 
+![Example error](example_failure_on_bash_typo.png)
+
