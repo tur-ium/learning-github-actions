@@ -8,7 +8,7 @@ jobs:
         os: [ubuntu-latest]
       steps:
         - name: Say Hello
-          run: echo "Hello GitHub octopus"
+          run: echoo "Hello GitHub octopus"
         - name: create a new python file
           run: |
             python3 -V
