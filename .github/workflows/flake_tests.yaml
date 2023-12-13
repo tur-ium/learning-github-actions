@@ -20,7 +20,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest
+          python -m pytest
 
       - name: Run flake 8
         uses: py-actions/flake8@v2
