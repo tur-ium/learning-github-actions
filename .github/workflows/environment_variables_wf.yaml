@@ -1,0 +1,18 @@
+name: Use an environment variable defined in the workflow
+
+on: workflow_dispatch
+
+env:
+  Miejsce: GitHub
+## Workflow-level env variable
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    env:
+      Powitanie: Cześć ## Environment variable for job
+    steps:
+      - name: "Say hello and say where we are, in Polish"
+        run: echo "$Powitanie $Nazwisko, jestemy w $Miejsce"
+        env:
+          Nazwisko: "GitHub Actions robot" ## Environment variable for step
